@@ -1,31 +1,28 @@
 import React from 'react';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import ProductCard from './ProductCard';
 
 const products = [
-  { id: 1, name: 'Product 1', price: 19.99, image: '/placeholder.svg' },
-  { id: 2, name: 'Product 2', price: 29.99, image: '/placeholder.svg' },
-  { id: 3, name: 'Product 3', price: 39.99, image: '/placeholder.svg' },
-  { id: 4, name: 'Product 4', price: 49.99, image: '/placeholder.svg' },
+  { id: 1, name: 'Great item name goes here', price: 1280, oldPrice: 1980, image: '/placeholder.svg', description: 'Product description' },
+  { id: 2, name: 'Product name goes here just for demo item', price: 1280, image: '/placeholder.svg', description: 'Product description' },
+  { id: 3, name: 'Product name goes here just for demo item', price: 1280, image: '/placeholder.svg', description: 'Product description' },
 ];
 
 const ProductList = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {products.map((product) => (
-        <Card key={product.id}>
-          <CardHeader>
-            <CardTitle>{product.name}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-4" />
-            <p className="text-lg font-bold">${product.price.toFixed(2)}</p>
-          </CardContent>
-          <CardFooter>
-            <Button className="w-full">Add to Cart</Button>
-          </CardFooter>
-        </Card>
-      ))}
+    <div>
+      <div className="flex justify-between items-center mb-4">
+        <p>32 Items found</p>
+        <select className="border p-2 rounded">
+          <option>Latest items</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
 };
