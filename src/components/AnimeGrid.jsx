@@ -4,7 +4,7 @@ const AnimeCard = ({ anime }) => (
   <div className="relative group">
     <img src={anime.image} alt={anime.title} className="w-full h-64 object-cover rounded-lg" />
     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-      <h3 className="text-white text-center font-semibold">{anime.title}</h3>
+      <h3 className="text-white text-center font-semibold px-2">{anime.title}</h3>
     </div>
   </div>
 );

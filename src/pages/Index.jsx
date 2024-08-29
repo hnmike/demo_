@@ -6,16 +6,16 @@ import AnimeGrid from '../components/AnimeGrid';
 const featuredAnime = {
   id: 1,
   title: 'ONE PIECE',
-  image: 'https://example.com/one-piece-banner.jpg',
+  image: 'https://cdn.myanimelist.net/images/anime/1208/94745l.jpg',
 };
 
 const popularAnimes = [
-  { id: 1, title: 'Attack on Titan', image: 'https://example.com/attack-on-titan.jpg' },
-  { id: 2, title: 'Demon Slayer: Kimetsu no Yaiba', image: 'https://example.com/demon-slayer.jpg' },
-  { id: 3, title: 'Death Note', image: 'https://example.com/death-note.jpg' },
-  { id: 4, title: 'My Hero Academia', image: 'https://example.com/my-hero-academia.jpg' },
-  { id: 5, title: 'Hunter x Hunter (2011)', image: 'https://example.com/hunter-x-hunter.jpg' },
-  { id: 6, title: 'JUJUTSU KAISEN', image: 'https://example.com/jujutsu-kaisen.jpg' },
+  { id: 1, title: 'Attack on Titan', image: 'https://cdn.myanimelist.net/images/anime/10/47347l.jpg' },
+  { id: 2, title: 'Demon Slayer: Kimetsu no Yaiba', image: 'https://cdn.myanimelist.net/images/anime/1286/99889l.jpg' },
+  { id: 3, title: 'Death Note', image: 'https://cdn.myanimelist.net/images/anime/9/9453l.jpg' },
+  { id: 4, title: 'My Hero Academia', image: 'https://cdn.myanimelist.net/images/anime/10/78745l.jpg' },
+  { id: 5, title: 'Hunter x Hunter (2011)', image: 'https://cdn.myanimelist.net/images/anime/11/33657l.jpg' },
+  { id: 6, title: 'JUJUTSU KAISEN', image: 'https://cdn.myanimelist.net/images/anime/1171/109222l.jpg' },
 ];
 
 const Index = () => {
