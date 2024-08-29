@@ -68,7 +68,7 @@ const popularAnimes = [
     episodes: 24,
     status: 'Ongoing',
     rating: 8.68,
-    description: 'A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself. He enters a shaman's school to be able to locate the demon's other body parts and thus exorcise himself.'
+    description: "A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself. He enters a shaman's school to be able to locate the demon's other body parts and thus exorcise himself."
   },
 ];
 
