@@ -47,7 +47,11 @@ const AnimeCard = ({ anime, onRate, onAddToList }) => {
   );
 };
 
-const AnimeGrid = ({ animes, title, onRate, onAddToList }) => {
+const AnimeGrid = ({ animes, title, onRate, onAddToList, isLoading }) => {
+  if (isLoading) {
+    return <div className="text-white">Đang tải...</div>;
+  }
+
   return (
     <div className="mb-8">
       <div className="flex justify-between items-center mb-4">

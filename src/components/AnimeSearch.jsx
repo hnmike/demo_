@@ -2,7 +2,15 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-const AnimeSearch = ({ results, onAddToList }) => {
+const AnimeSearch = ({ results, onAddToList, isLoading }) => {
+  if (isLoading) {
+    return <div className="text-white">Đang tìm kiếm...</div>;
+  }
+
+  if (results.length === 0) {
+    return <div className="text-white">Không tìm thấy kết quả.</div>;
+  }
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {results.map((anime) => (
