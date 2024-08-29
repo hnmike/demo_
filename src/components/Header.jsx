@@ -1,40 +1,29 @@
 import React from 'react';
-import { ShoppingCart, Menu, Search } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-md">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center">
-          <Button variant="ghost" size="icon" className="mr-2 lg:hidden">
-            <Menu className="h-6 w-6" />
-          </Button>
-          <h1 className="text-2xl font-bold text-blue-600">Tên Công Ty</h1>
-        </div>
-        <div className="flex-grow mx-4 max-w-xl">
+    <header className="bg-gray-900 text-white py-4">
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        <div className="flex items-center space-x-8">
+          <h1 className="text-2xl font-bold">見ろ</h1>
           <div className="relative">
-            <Input type="text" placeholder="Tìm kiếm" className="w-full pr-10" />
-            <Button size="sm" className="absolute right-0 top-0 h-full">
-              <Search className="h-4 w-4" />
-            </Button>
+            <Input
+              type="text"
+              placeholder="Search Anime"
+              className="w-64 bg-gray-800 text-white placeholder-gray-400 border-none rounded-full pl-10 pr-4 py-2"
+            />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
           </div>
         </div>
-        <div className="flex items-center space-x-4">
-          <Button variant="ghost">
-            Xin chào!
-          </Button>
-          <Button variant="ghost">
-            Đăng nhập | Đăng ký
-          </Button>
-          <Button variant="outline" size="icon" className="relative">
-            <ShoppingCart className="h-5 w-5" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-              0
-            </span>
-          </Button>
-        </div>
+        <nav>
+          <ul className="flex space-x-6">
+            <li><a href="#" className="hover:text-gray-300">Popular</a></li>
+            <li><a href="#" className="hover:text-gray-300">Forum</a></li>
+            <li><a href="#" className="hover:text-gray-300">Help</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
