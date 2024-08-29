@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import AnimeInfoModal from './AnimeInfoModal';
 
-const AnimeCard = ({ anime }) => (
-  <Card className="overflow-hidden">
-    <img src={anime.image} alt={anime.title} className="w-full h-48 object-cover" />
-    <CardContent className="p-4">
-      <h3 className="font-semibold text-lg mb-2">{anime.title}</h3>
-      <p className="text-sm text-gray-600 mb-1">Genre: {anime.genre}</p>
-      <p className="text-sm text-gray-600 mb-1">Episodes: {anime.episodes}</p>
-      <p className="text-sm text-gray-600 mb-1">Status: {anime.status}</p>
-      <p className="text-sm text-gray-600">Rating: {anime.rating}</p>
-    </CardContent>
-  </Card>
-);
+const AnimeCard = ({ anime }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <>
+      <Card className="overflow-hidden">
+        <img src={anime.image} alt={anime.title} className="w-full h-48 object-cover" />
+        <CardContent className="p-4">
+          <h3 className="font-semibold text-lg mb-2">{anime.title}</h3>
+          <p className="text-sm text-gray-600 mb-1">Genre: {anime.genre}</p>
+          <p className="text-sm text-gray-600 mb-1">Episodes: {anime.episodes}</p>
+          <p className="text-sm text-gray-600 mb-1">Status: {anime.status}</p>
+          <p className="text-sm text-gray-600 mb-2">Rating: {anime.rating}</p>
+          <Button onClick={() => setIsModalOpen(true)} className="w-full">
+            View Details
+          </Button>
+        </CardContent>
+      </Card>
+      <AnimeInfoModal
+        anime={anime}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
+  );
+};
 
 const AnimeGrid = ({ animes, title }) => {
   return (

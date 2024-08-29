@@ -17,7 +17,8 @@ const popularAnimes = [
     genre: 'Action, Dark Fantasy, Post-apocalyptic',
     episodes: 75,
     status: 'Finished Airing',
-    rating: 8.53
+    rating: 8.53,
+    description: 'Humanity lives inside cities surrounded by enormous walls due to the Titans, gigantic humanoid creatures who devour humans seemingly without reason.'
   },
   { 
     id: 2, 
@@ -26,7 +27,8 @@ const popularAnimes = [
     genre: 'Action, Dark Fantasy, Adventure',
     episodes: 26,
     status: 'Finished Airing',
-    rating: 8.52
+    rating: 8.52,
+    description: 'A boy raised by his father to hunt demons seeks revenge after his entire family is slaughtered by a demon attack.'
   },
   { 
     id: 3, 
@@ -35,7 +37,8 @@ const popularAnimes = [
     genre: 'Mystery, Psychological Thriller, Supernatural',
     episodes: 37,
     status: 'Finished Airing',
-    rating: 8.62
+    rating: 8.62,
+    description: 'A high school student discovers a mysterious notebook that allows him to kill anyone by writing their name in it.'
   },
   { 
     id: 4, 
@@ -44,7 +47,8 @@ const popularAnimes = [
     genre: 'Superhero, Comedy',
     episodes: 113,
     status: 'Ongoing',
-    rating: 7.92
+    rating: 7.92,
+    description: 'In a world where people with superpowers are the norm, a boy without them dreams of becoming a superhero himself.'
   },
   { 
     id: 5, 
@@ -53,7 +57,8 @@ const popularAnimes = [
     genre: 'Adventure, Fantasy',
     episodes: 148,
     status: 'Finished Airing',
-    rating: 9.04
+    rating: 9.04,
+    description: 'A young boy sets out on a journey to become a Hunter, an elite human who tracks down treasures, magical beasts, and even other people.'
   },
   { 
     id: 6, 
@@ -62,7 +67,8 @@ const popularAnimes = [
     genre: 'Dark Fantasy, Supernatural',
     episodes: 24,
     status: 'Ongoing',
-    rating: 8.68
+    rating: 8.68,
+    description: 'A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself. He enters a shaman's school to be able to locate the demon's other body parts and thus exorcise himself.'
   },
 ];
 
