@@ -4,6 +4,7 @@ import FeaturedAnime from '../components/FeaturedAnime';
 import AnimeGrid from '../components/AnimeGrid';
 import AnimeSearch from '../components/AnimeSearch';
 import MyList from '../components/MyList';
+import { Button } from '@/components/ui/button';
 
 const featuredAnime = {
   id: 1,
