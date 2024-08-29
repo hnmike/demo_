@@ -1,12 +1,17 @@
 import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const AnimeCard = ({ anime }) => (
-  <div className="relative group">
-    <img src={anime.image} alt={anime.title} className="w-full h-64 object-cover rounded-lg" />
-    <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-      <h3 className="text-white text-center font-semibold px-2">{anime.title}</h3>
-    </div>
-  </div>
+  <Card className="overflow-hidden">
+    <img src={anime.image} alt={anime.title} className="w-full h-48 object-cover" />
+    <CardContent className="p-4">
+      <h3 className="font-semibold text-lg mb-2">{anime.title}</h3>
+      <p className="text-sm text-gray-600 mb-1">Genre: {anime.genre}</p>
+      <p className="text-sm text-gray-600 mb-1">Episodes: {anime.episodes}</p>
+      <p className="text-sm text-gray-600 mb-1">Status: {anime.status}</p>
+      <p className="text-sm text-gray-600">Rating: {anime.rating}</p>
+    </CardContent>
+  </Card>
 );
 
 const AnimeGrid = ({ animes, title }) => {
@@ -16,7 +21,7 @@ const AnimeGrid = ({ animes, title }) => {
         <h2 className="text-2xl font-bold text-white">{title}</h2>
         <a href="#" className="text-gray-400 hover:text-white">View All</a>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {animes.map((anime) => (
           <AnimeCard key={anime.id} anime={anime} />
         ))}
