@@ -11,15 +11,15 @@ const ProductCard = ({ product }) => {
           <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
           <p className="text-gray-600 mb-2">{product.description}</p>
           <div className="flex items-center justify-between">
-            <span className="font-bold text-lg">${product.price.toFixed(2)}</span>
+            <span className="font-bold text-lg">{product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
             {product.oldPrice && (
-              <span className="text-gray-500 line-through">${product.oldPrice.toFixed(2)}</span>
+              <span className="text-gray-500 line-through">{product.oldPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
             )}
           </div>
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Add to cart</Button>
+        <Button className="w-full">Thêm vào giỏ hàng</Button>
       </CardFooter>
     </Card>
   );

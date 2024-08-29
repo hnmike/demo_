@@ -14,12 +14,12 @@ const Index = () => {
           <div className="flex-grow">
             <nav className="text-sm breadcrumbs mb-4">
               <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Best category</a></li>
-                <li>Great articles</li>
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/">Danh mục tốt nhất</a></li>
+                <li>Sản phẩm tuyệt vời</li>
               </ul>
             </nav>
-            <h1 className="text-3xl font-bold mb-6">Category products</h1>
+            <h1 className="text-3xl font-bold mb-6">Sản phẩm theo danh mục</h1>
             <ProductList />
           </div>
         </div>

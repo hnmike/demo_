@@ -11,11 +11,11 @@ const Header = () => {
           <Button variant="ghost" size="icon" className="mr-2 lg:hidden">
             <Menu className="h-6 w-6" />
           </Button>
-          <h1 className="text-2xl font-bold text-blue-600">Company Name</h1>
+          <h1 className="text-2xl font-bold text-blue-600">Tên Công Ty</h1>
         </div>
         <div className="flex-grow mx-4 max-w-xl">
           <div className="relative">
-            <Input type="text" placeholder="Search" className="w-full pr-10" />
+            <Input type="text" placeholder="Tìm kiếm" className="w-full pr-10" />
             <Button size="sm" className="absolute right-0 top-0 h-full">
               <Search className="h-4 w-4" />
             </Button>
@@ -23,10 +23,10 @@ const Header = () => {
         </div>
         <div className="flex items-center space-x-4">
           <Button variant="ghost">
-            Welcome!
+            Xin chào!
           </Button>
           <Button variant="ghost">
-            Sign in | Register
+            Đăng nhập | Đăng ký
           </Button>
           <Button variant="outline" size="icon" className="relative">
             <ShoppingCart className="h-5 w-5" />
