@@ -3,6 +3,7 @@ import { Search, UserCircle } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useCurrentUser } from '../api/userApi';
+import { Link } from 'react-router-dom';
 
 const Header = ({ onSearch, onLoginClick, onSignupClick, onProfileClick }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +18,7 @@ const Header = ({ onSearch, onLoginClick, onSignupClick, onProfileClick }) => {
     <header className="bg-gray-900 text-white py-4">
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center space-x-8">
-          <h1 className="text-2xl font-bold">見ろ</h1>
+          <Link to="/" className="text-2xl font-bold">見ろ</Link>
           <form onSubmit={handleSearch} className="relative">
             <Input
               type="text"
@@ -33,10 +34,10 @@ const Header = ({ onSearch, onLoginClick, onSignupClick, onProfileClick }) => {
         </div>
         <nav>
           <ul className="flex space-x-6 items-center">
-            <li><a href="#" className="hover:text-gray-300">Phổ biến</a></li>
+            <li><Link to="/" className="hover:text-gray-300">Trang chủ</Link></li>
+            <li><Link to="/collections" className="hover:text-gray-300">Bộ sưu tập</Link></li>
             <li><a href="#" className="hover:text-gray-300">Diễn đàn</a></li>
             <li><a href="#" className="hover:text-gray-300">Trợ giúp</a></li>
-            <li><a href="#" className="hover:text-gray-300">Danh sách của tôi</a></li>
             {currentUser ? (
               <li>
                 <Button onClick={onProfileClick} className="flex items-center">
