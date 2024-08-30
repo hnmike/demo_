@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import AnimeInfoModal from './AnimeInfoModal';
-import { Star } from 'lucide-react';
+import { Star, Heart } from 'lucide-react';
 
-const AnimeCard = ({ anime, onRate, onAddToList }) => {
+const AnimeCard = ({ anime, onRate, onAddToWishlist, userRating, isInWishlist }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleRate = (rating) => {
@@ -25,7 +25,7 @@ const AnimeCard = ({ anime, onRate, onAddToList }) => {
             {[1, 2, 3, 4, 5].map((star) => (
               <Star
                 key={star}
-                className={`h-4 w-4 cursor-pointer ${star <= anime.rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                className={`h-4 w-4 cursor-pointer ${star <= (userRating || anime.rating) ? 'text-yellow-400' : 'text-gray-300'}`}
                 onClick={() => handleRate(star)}
               />
             ))}
@@ -33,8 +33,12 @@ const AnimeCard = ({ anime, onRate, onAddToList }) => {
           <Button onClick={() => setIsModalOpen(true)} className="w-full mb-2">
             Xem chi tiết
           </Button>
-          <Button onClick={() => onAddToList(anime)} className="w-full">
-            Thêm vào danh sách
+          <Button 
+            onClick={() => onAddToWishlist(anime.id)} 
+            className={`w-full ${isInWishlist ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'}`}
+          >
+            <Heart className={`mr-2 h-4 w-4 ${isInWishlist ? 'fill-current' : ''}`} />
+            {isInWishlist ? 'Xóa khỏi danh sách' : 'Thêm vào danh sách'}
           </Button>
         </CardContent>
       </Card>
@@ -47,7 +51,7 @@ const AnimeCard = ({ anime, onRate, onAddToList }) => {
   );
 };
 
-const AnimeGrid = ({ animes, title, onRate, onAddToList, isLoading }) => {
+const AnimeGrid = ({ animes, title, onRate, onAddToWishlist, isLoading, userRatings, userWishlist }) => {
   if (isLoading) {
     return <div className="text-white">Đang tải...</div>;
   }
@@ -60,7 +64,14 @@ const AnimeGrid = ({ animes, title, onRate, onAddToList, isLoading }) => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {animes.map((anime) => (
-          <AnimeCard key={anime.id} anime={anime} onRate={onRate} onAddToList={onAddToList} />
+          <AnimeCard 
+            key={anime.id} 
+            anime={anime} 
+            onRate={onRate} 
+            onAddToWishlist={onAddToWishlist}
+            userRating={userRatings?.[anime.id]}
+            isInWishlist={userWishlist?.includes(anime.id)}
+          />
         ))}
       </div>
     </div>
