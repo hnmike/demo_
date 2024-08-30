@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Search } from 'lucide-react';
+import { Search, UserCircle } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { useCurrentUser } from '../api/userApi';
 
-const Header = ({ onSearch }) => {
+const Header = ({ onSearch, onLoginClick, onSignupClick, onProfileClick }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const { data: currentUser } = useCurrentUser();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -30,11 +32,24 @@ const Header = ({ onSearch }) => {
           </form>
         </div>
         <nav>
-          <ul className="flex space-x-6">
+          <ul className="flex space-x-6 items-center">
             <li><a href="#" className="hover:text-gray-300">Phổ biến</a></li>
             <li><a href="#" className="hover:text-gray-300">Diễn đàn</a></li>
             <li><a href="#" className="hover:text-gray-300">Trợ giúp</a></li>
             <li><a href="#" className="hover:text-gray-300">Danh sách của tôi</a></li>
+            {currentUser ? (
+              <li>
+                <Button onClick={onProfileClick} className="flex items-center">
+                  <UserCircle className="mr-2" />
+                  {currentUser.username}
+                </Button>
+              </li>
+            ) : (
+              <>
+                <li><Button onClick={onLoginClick}>Đăng nhập</Button></li>
+                <li><Button onClick={onSignupClick}>Đăng ký</Button></li>
+              </>
+            )}
           </ul>
         </nav>
       </div>
