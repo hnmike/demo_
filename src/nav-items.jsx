@@ -1,4 +1,4 @@
-import { HomeIcon, CollectionsIcon } from "lucide-react";
+import { HomeIcon, FolderIcon } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import AnimeCollections from "./components/AnimeCollections.jsx";
 
@@ -15,7 +15,7 @@ export const navItems = [
   {
     title: "Collections",
     to: "/collections",
-    icon: <CollectionsIcon className="h-4 w-4" />,
+    icon: <FolderIcon className="h-4 w-4" />,
     page: <AnimeCollections />,
   },
 ];
