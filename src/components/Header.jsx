@@ -18,7 +18,7 @@ const Header = ({ onSearch, onLoginClick, onSignupClick, onProfileClick }) => {
     <header className="bg-gray-900 text-white py-4">
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center space-x-8">
-          <Link to="/" className="text-2xl font-bold">見ろ</Link>
+          <Link to="/" className="text-2xl font-bold text-primary dark:text-primary-foreground">m4vie</Link>
           <form onSubmit={handleSearch} className="relative">
             <Input
               type="text"
