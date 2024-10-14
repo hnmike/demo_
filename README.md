@@ -61,7 +61,7 @@ All GPT Engineer projects can be deployed directly via the GPT Engineer app.
 
 Simply visit your project at [GPT Engineer](https://gptengineer.app/projects/d78a1ffe-cb0f-4942-9fa6-2500252a909f/improve) and click on Share -> Publish.
 đưqwfwefewfw 
-## I want to use a custom domain - is that possible?
+## I want to use a custom ddsaomain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify or GitHub pages. Visit our docs for more details: [Custom domains](https://docs.gptengineer.app/tips-tricks/custom-domain/)
 
