@@ -28,8 +28,7 @@ Follow these steps:
 git clone https://github.com/GPT-Engineer-App/shopresponsive-galaxy.git
 cd shopresponsive-galaxy
 npm i
-
-# This will run a dev server with auto reloading and an instant preview.
+dadauto reloading and an instant preview.
 npm run dev
 ```
 
